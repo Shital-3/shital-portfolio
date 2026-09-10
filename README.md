@@ -2,7 +2,7 @@
 
 Personal portfolio website built with React + Vite, showcasing my projects, certifications, and technical skills as a final-year Computer Engineering student.
 
-🔗 **Live Site:** [shital-portfolio.vercel.app](https://shital-portfolio.vercel.app) <!-- update once deployed -->
+🔗 **Live Site:** [shital-portfolio.vercel.app](https://shital-portfolio-six.vercel.app/) <!-- update once deployed -->
 
 ---
 
