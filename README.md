@@ -2,7 +2,7 @@
 
 Personal portfolio website built with React + Vite, showcasing my projects, certifications, and technical skills as a final-year Computer Engineering student.
 
-🔗 **Live Site:** [shital-portfolio.vercel.app](https://shital-portfolio-six.vercel.app/) <!-- update once deployed -->
+🔗 **Live Site:** [shital-portfolio.vercel.app](https://shital-portfolio-six.vercel.app/)
 
 ---
 
@@ -27,12 +27,12 @@ Final-year B.Tech Computer Engineering student (batch of 2027) with hands-on exp
 
 ## 🚀 Projects Featured
 
-| Project | Description | Stack |
-|---|---|---|
-| **[Torii](https://github.com/Shital-3/torii-learn)** | Japanese learning platform — Hiragana, Katakana, Kanji, vocabulary, flashcards, and quizzes with local progress tracking | React 18, Vite, React Router v6, Context API |
-| **[Store Rating App](https://github.com/Shital-3/store-rating-app)** | Full-stack, role-based store rating platform (Admin/User/Owner) with JWT-secured auth | React, Node.js, Express.js, MySQL |
-| **Pathfinder** *(in development)* | Student career & academic dilemma-sharing platform — solo-architected frontend with a planned Node.js/Prisma backend | React, Vite, Node.js, Express, MySQL, Prisma |
-| **[Darshan Productions](https://github.com/Shital-3/Darshan_Production)** | Freelance frontend project — cinematic, dark-editorial website for a real film production house client | React, Vite, CSS3 |
+| Project | Description | Stack | Live Demo |
+|---|---|---|---|
+| **[Torii](https://github.com/Shital-3/torii-learn)** | Japanese learning platform — Hiragana, Katakana, Kanji, vocabulary, flashcards, and quizzes with local progress tracking | React 18, Vite, React Router v6, Context API | [torii-learn.vercel.app](https://torii-learn.vercel.app) |
+| **[Store Rating App](https://github.com/Shital-3/store-rating-app)** | Full-stack, role-based store rating platform (Admin/User/Owner) with JWT-secured auth | React, Node.js, Express.js, MySQL | [store-rating-app-rho-one.vercel.app](https://store-rating-app-rho-one.vercel.app) |
+| **Pathfinder** *(in development)* | Student career & academic dilemma-sharing platform — solo-architected frontend with a planned Node.js/Prisma backend | React, Vite, Node.js, Express, MySQL, Prisma | [pathfinder-murex-seven.vercel.app](https://pathfinder-murex-seven.vercel.app) |
+| **[Darshan Productions](https://github.com/Shital-3/Darshan_Production)** | Freelance frontend project — cinematic, dark-editorial website for a real film production house client | React, Vite, CSS3 | [darshan-production.vercel.app](https://darshan-production.vercel.app) |
 
 ## 📜 Certifications
 
