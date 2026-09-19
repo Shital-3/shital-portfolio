@@ -1,3 +1,7 @@
+/* ==========================================================================
+   PORTFOLIO SECTION
+   ========================================================================== */
+
 .portfolio-section {
   padding: 5rem 2rem;
 }
@@ -7,60 +11,111 @@
   margin: 0 auto;
 }
 
+
+/* ==========================================================================
+   PORTFOLIO TABS
+   ========================================================================== */
+
 .tabs-container {
   display: flex;
   justify-content: center;
+  align-items: center;
+
   background: var(--bg-card);
   border: 1px solid var(--border-color);
+
   padding: 0.5rem;
   border-radius: var(--radius-lg);
+
   max-width: 600px;
   margin: 0 auto 3rem auto;
+
   gap: 0.5rem;
 }
 
 .tab-btn {
   flex: 1;
+
   background: transparent;
   color: var(--text-secondary);
+
   padding: 0.8rem 1rem;
+
+  border: none;
   border-radius: var(--radius-md);
+
   font-weight: 600;
   font-size: 0.95rem;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   gap: 0.5rem;
+
+  cursor: pointer;
+
   transition: var(--transition-normal);
 }
 
-.tab-btn:hover { color: var(--text-primary); }
+.tab-btn:hover {
+  color: var(--text-primary);
+}
 
 .tab-btn.active {
   background: var(--primary-gradient);
   color: #fff;
+
   box-shadow: 0 4px 15px var(--primary-glow);
 }
 
-/* Certificates stay a static grid */
+
+/* ==========================================================================
+   CERTIFICATES GRID
+   ========================================================================== */
+
 .certificates-grid {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 1.8rem;
 }
 
-/* Projects become an auto-sliding marquee */
+
+/* ==========================================================================
+   PROJECT MARQUEE
+   ========================================================================== */
+
 .projects-marquee-wrapper {
   overflow: hidden;
+
   width: 100%;
-  mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 5%,
+    #000 95%,
+    transparent
+  );
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 5%,
+    #000 95%,
+    transparent
+  );
 }
 
 .projects-marquee-track {
   display: flex;
+
   gap: 1.8rem;
+
   width: max-content;
+
   animation: marqueeScroll 35s linear infinite;
 }
 
@@ -69,167 +124,325 @@
 }
 
 @keyframes marqueeScroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
-.project-card, .cert-card {
+
+/* ==========================================================================
+   PROJECT & CERTIFICATE CARDS
+   ========================================================================== */
+
+.project-card,
+.cert-card {
   background: var(--bg-card);
+
   border: 1px solid var(--border-color);
+
   border-radius: var(--radius-md);
+
   overflow: hidden;
+
   transition: var(--transition-normal);
 }
+
+.project-card:hover,
+.cert-card:hover {
+  transform: translateY(-6px);
+
+  border-color: var(--border-glow);
+
+  box-shadow: 0 12px 30px rgba(139, 92, 246, 0.2);
+}
+
+
+/* ==========================================================================
+   PROJECT CARD
+   ========================================================================== */
 
 .project-card {
   display: flex;
   flex-direction: column;
+
   flex: 0 0 320px;
   width: 320px;
 }
 
-.project-card:hover, .cert-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--border-glow);
-  box-shadow: 0 12px 30px rgba(139, 92, 246, 0.2);
-}
 
-.project-image-container, .cert-image-container {
-  height: 200px;
-  overflow: hidden;
-}
+/* ==========================================================================
+   PROJECT IMAGE
+   ========================================================================== */
 
 .project-image-container {
+  width: 100%;
+
+  height: 200px;
+
+  overflow: hidden;
+
   background: #0d0f1a;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  position: relative;
 }
 
 .project-image-container img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+
+  display: block;
+
+  /*
+    COVER makes the screenshot completely
+    fill the project card.
+  */
+  object-fit: cover;
+
+  /*
+    Website screenshots look better when
+    the top navigation/header remains visible.
+  */
+  object-position: top center;
+
   transition: transform 0.5s ease;
 }
 
-.project-card:hover .project-image-container img { transform: scale(1.05); }
+.project-card:hover .project-image-container img {
+  transform: scale(1.04);
+}
 
-/* Certificates are document screenshots, not photos — contain (not crop) them */
+
+/* ==========================================================================
+   CERTIFICATE IMAGE
+   ========================================================================== */
+
 .cert-image-container {
+  height: 200px;
+
   background: #f4f4f4;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   padding: 0.5rem;
+
+  overflow: hidden;
 }
 
 .cert-image-container img {
   width: 100%;
   height: 100%;
+
   object-fit: contain;
+
+  display: block;
+
   cursor: pointer;
+
   transition: transform 0.3s ease;
 }
 
-.cert-card:hover .cert-image-container img { transform: scale(1.03); }
+.cert-card:hover .cert-image-container img {
+  transform: scale(1.03);
+}
 
-.project-content, .cert-content {
+
+/* ==========================================================================
+   PROJECT / CERTIFICATE CONTENT
+   ========================================================================== */
+
+.project-content,
+.cert-content {
   padding: 1.5rem;
+
   display: flex;
   flex-direction: column;
+
   flex-grow: 1;
 }
 
-.project-title, .cert-title {
+
+/* ==========================================================================
+   PROJECT / CERTIFICATE TITLES
+   ========================================================================== */
+
+.project-title,
+.cert-title {
   font-size: 1.25rem;
+
   font-weight: 700;
+
   margin-bottom: 0.6rem;
+
   color: var(--text-primary);
 }
 
+
+/* ==========================================================================
+   PROJECT DESCRIPTION
+   ========================================================================== */
+
 .project-description {
   font-size: 0.9rem;
+
   color: var(--text-secondary);
+
   line-height: 1.6;
+
   margin-bottom: 1.2rem;
+
   flex-grow: 1;
 }
 
+
+/* ==========================================================================
+   PROJECT TAGS
+   ========================================================================== */
+
 .project-tags {
   display: flex;
+
   flex-wrap: wrap;
+
   gap: 0.4rem;
+
   margin-bottom: 1.5rem;
 }
 
 .project-tag {
   font-size: 0.75rem;
+
   background: rgba(139, 92, 246, 0.1);
+
   color: var(--accent-purple);
+
   padding: 0.2rem 0.6rem;
+
   border-radius: var(--radius-sm);
+
   border: 1px solid rgba(139, 92, 246, 0.2);
 }
 
+
+/* ==========================================================================
+   PROJECT ACTIONS
+   ========================================================================== */
+
 .project-actions {
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
+
   border-top: 1px solid var(--border-color);
+
   padding-top: 1rem;
 }
 
 .action-link {
   font-size: 0.85rem;
+
   font-weight: 600;
+
   display: flex;
+
   align-items: center;
+
   gap: 0.3rem;
+
   transition: var(--transition-fast);
 }
 
-.action-link.primary { color: #a855f7; }
-.action-link.secondary { color: var(--text-secondary); }
+.action-link.primary {
+  color: #a855f7;
+}
+
+.action-link.secondary {
+  color: var(--text-secondary);
+}
 
 .action-link.disabled {
   color: var(--text-muted);
+
   opacity: 0.5;
+
   cursor: default;
 }
 
-.see-more-container { text-align: center; margin-top: 2.5rem; }
+
+/* ==========================================================================
+   SEE MORE BUTTON
+   ========================================================================== */
+
+.see-more-container {
+  text-align: center;
+
+  margin-top: 2.5rem;
+}
 
 .see-more-btn {
   background: var(--bg-card);
+
   border: 1px solid var(--border-color);
+
   color: var(--text-secondary);
+
   padding: 0.6rem 1.4rem;
+
   border-radius: var(--radius-full);
+
   font-size: 0.85rem;
+
   display: inline-flex;
+
   align-items: center;
+
   gap: 0.4rem;
+
+  cursor: pointer;
+
   transition: var(--transition-fast);
 }
 
 .see-more-btn:hover {
   color: var(--text-primary);
+
   border-color: var(--accent-purple);
 }
 
+
+/* ==========================================================================
+   CERTIFICATE INFORMATION
+   ========================================================================== */
+
 .cert-issuer {
   font-size: 0.85rem;
+
   color: var(--text-muted);
+
   margin-bottom: 1rem;
 }
 
 .cert-btn {
   width: 100%;
+
   justify-content: center;
+
   font-size: 0.85rem;
+
   cursor: pointer;
 }
+
 
 /* ==========================================================================
    CERTIFICATE MODAL / LIGHTBOX
@@ -237,170 +450,286 @@
 
 .cert-modal-overlay {
   position: fixed;
+
   inset: 0;
+
   background: rgba(0, 0, 0, 0.85);
+
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
+
   display: flex;
+
   align-items: center;
   justify-content: center;
+
   padding: 2rem;
+
   z-index: 1000;
+
   animation: certFadeIn 0.2s ease;
 }
 
 .cert-modal-content {
   position: relative;
+
   max-width: 900px;
+
   width: 100%;
+
   max-height: 90vh;
+
   background: var(--bg-card);
+
   border: 1px solid var(--border-color);
+
   border-radius: var(--radius-lg);
+
   padding: 1.5rem;
+
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   overflow-y: auto;
 }
 
 .cert-modal-image {
   width: 100%;
+
   height: auto;
+
   max-height: 70vh;
+
   object-fit: contain;
+
   background: #fff;
+
   border-radius: var(--radius-md);
 }
 
 .cert-modal-close {
   position: absolute;
+
   top: 1rem;
   right: 1rem;
+
   width: 36px;
   height: 36px;
+
   border-radius: 50%;
+
   background: rgba(255, 255, 255, 0.1);
+
   border: none;
+
   color: #fff;
+
   display: flex;
+
   align-items: center;
   justify-content: center;
+
   font-size: 1.1rem;
+
   cursor: pointer;
+
   transition: var(--transition-fast);
+
   z-index: 2;
 }
 
-.cert-modal-close:hover { background: rgba(255, 255, 255, 0.25); }
+.cert-modal-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
 
 .cert-modal-info {
   margin-top: 1.2rem;
+
   text-align: center;
 }
 
 .cert-modal-info h3 {
   color: var(--text-primary);
+
   font-size: 1.1rem;
+
   margin-bottom: 0.3rem;
 }
 
 .cert-modal-info p {
   color: var(--text-secondary);
+
   font-size: 0.9rem;
 }
 
 .cert-modal-back-btn {
   margin-top: 1rem;
+
   background: var(--bg-card);
+
   border: 1px solid var(--border-color);
+
   color: var(--text-secondary);
+
   padding: 0.6rem 1.4rem;
+
   border-radius: var(--radius-full);
+
   font-size: 0.85rem;
+
   font-weight: 600;
+
   cursor: pointer;
+
   transition: var(--transition-fast);
 }
 
 .cert-modal-back-btn:hover {
   color: var(--text-primary);
+
   border-color: var(--accent-purple);
 }
 
 @keyframes certFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
+
 /* ==========================================================================
-   TECH STACK GRID & AMBIENT GLOW
+   TECH STACK GRID
    ========================================================================== */
 
 .tech-wrapper {
   position: relative;
+
   display: flex;
+
   justify-content: center;
+
   align-items: center;
+
   padding: 2rem 0;
+
   overflow: hidden;
 }
 
+
+/* ==========================================================================
+   TECH CENTER GLOW
+   ========================================================================== */
+
 .tech-center-glow {
   position: absolute;
+
   top: 50%;
   left: 50%;
+
   transform: translate(-50%, -50%);
+
   width: 450px;
   height: 280px;
+
   background: radial-gradient(
     ellipse at center,
     rgba(186, 24, 110, 0.45) 0%,
     rgba(139, 92, 246, 0.25) 40%,
     transparent 70%
   );
+
   filter: blur(60px);
+
   pointer-events: none;
+
   z-index: 1;
 }
 
+
+/* ==========================================================================
+   TECH GRID
+   ========================================================================== */
+
 .tech-grid {
   position: relative;
+
   z-index: 2;
+
   display: grid;
+
   grid-template-columns: repeat(6, 1fr);
+
   gap: 1.25rem;
+
   width: 100%;
+
   max-width: 950px;
+
   margin: 0 auto;
 }
 
+
+/* ==========================================================================
+   TECH SQUARE CARD
+   ========================================================================== */
+
 .tech-square-card {
   background: rgba(18, 22, 33, 0.85);
+
   border: 1px solid rgba(255, 255, 255, 0.05);
+
   border-radius: 16px;
+
   aspect-ratio: 1 / 1;
+
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   justify-content: center;
+
   padding: 1rem;
+
   gap: 0.75rem;
+
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .tech-square-card:hover {
   transform: translateY(-4px);
+
   border-color: rgba(255, 255, 255, 0.2);
+
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
 }
 
+
+/* ==========================================================================
+   TECH ICON
+   ========================================================================== */
+
 .tech-icon-container {
   font-size: 2.8rem;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 }
 
@@ -408,27 +737,143 @@
   color: inherit;
 }
 
+
+/* ==========================================================================
+   TECH LABEL
+   ========================================================================== */
+
 .tech-card-label {
   color: #a0aec0;
+
   font-size: 0.8rem;
+
   font-weight: 600;
+
   text-align: center;
+
   line-height: 1.2;
 }
 
-/* Responsive Styles */
+
+/* ==========================================================================
+   RESPONSIVE - TABLET
+   ========================================================================== */
+
 @media (max-width: 992px) {
-  .certificates-grid { grid-template-columns: 1fr; }
-  .tech-grid { grid-template-columns: repeat(4, 1fr); }
-  .project-card { flex: 0 0 280px; width: 280px; }
+
+  .certificates-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .project-card {
+    flex: 0 0 300px;
+
+    width: 300px;
+  }
+
+  .project-image-container {
+    height: 190px;
+  }
 }
+
+
+/* ==========================================================================
+   RESPONSIVE - MOBILE
+   ========================================================================== */
 
 @media (max-width: 600px) {
-  .tech-grid { grid-template-columns: repeat(3, 1fr); }
-  .cert-modal-content { padding: 1rem; }
+
+  .portfolio-section {
+    padding: 4rem 1rem;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 0.8rem;
+  }
+
+  .project-card {
+    flex: 0 0 280px;
+
+    width: 280px;
+  }
+
+  .project-image-container {
+    height: 175px;
+  }
+
+  .project-content,
+  .cert-content {
+    padding: 1.2rem;
+  }
+
+  .cert-modal-content {
+    padding: 1rem;
+  }
+
+  .tech-square-card {
+    padding: 0.7rem;
+
+    gap: 0.5rem;
+  }
+
+  .tech-icon-container {
+    font-size: 2.2rem;
+  }
 }
 
+
+/* ==========================================================================
+   RESPONSIVE - SMALL MOBILE
+   ========================================================================== */
+
 @media (max-width: 480px) {
-  .tabs-container { flex-direction: column; }
-  .tech-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .tabs-container {
+    flex-direction: column;
+
+    width: 100%;
+
+    gap: 0.4rem;
+  }
+
+  .tab-btn {
+    width: 100%;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-card {
+    flex: 0 0 270px;
+
+    width: 270px;
+  }
+
+  .project-image-container {
+    height: 170px;
+  }
+
+  .project-title,
+  .cert-title {
+    font-size: 1.1rem;
+  }
+
+  .project-description {
+    font-size: 0.85rem;
+  }
+
+  .project-tags {
+    margin-bottom: 1rem;
+  }
+
+  .action-link {
+    font-size: 0.8rem;
+  }
 }
