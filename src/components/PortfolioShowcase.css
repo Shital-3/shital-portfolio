@@ -178,10 +178,25 @@
    PROJECT IMAGE
    ========================================================================== */
 
+/*
+  IMPORTANT:
+
+  The old version used:
+
+      height: 200px;
+      object-fit: cover;
+
+  which CROPPED your website screenshots.
+
+  The new version allows the image to keep its
+  original aspect ratio so the COMPLETE screenshot
+  remains visible inside the card.
+*/
+
 .project-image-container {
   width: 100%;
 
-  height: 200px;
+  height: auto;
 
   overflow: hidden;
 
@@ -196,27 +211,34 @@
 
 .project-image-container img {
   width: 100%;
-  height: 100%;
+  height: auto;
+
+  max-width: 100%;
 
   display: block;
 
   /*
-    COVER makes the screenshot completely
-    fill the project card.
+    IMPORTANT:
+    contain keeps the entire screenshot visible.
   */
-  object-fit: cover;
+  object-fit: contain;
+
+  object-position: center;
 
   /*
-    Website screenshots look better when
-    the top navigation/header remains visible.
+    Do not zoom the screenshot.
   */
-  object-position: top center;
+  transform: none !important;
 
-  transition: transform 0.5s ease;
+  transition: none;
 }
 
+/*
+  Keep the COMPLETE screenshot visible even
+  when the card is hovered.
+*/
 .project-card:hover .project-image-container img {
-  transform: scale(1.04);
+  transform: none !important;
 }
 
 
@@ -775,8 +797,20 @@
     width: 300px;
   }
 
+  /*
+    IMPORTANT:
+    Do NOT set a fixed height for project images.
+    The image needs to determine its own height.
+  */
   .project-image-container {
-    height: 190px;
+    height: auto;
+  }
+
+  .project-image-container img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
   }
 }
 
@@ -803,8 +837,19 @@
     width: 280px;
   }
 
+  /*
+    Keep screenshot height automatic.
+    This prevents cropping on mobile.
+  */
   .project-image-container {
-    height: 175px;
+    height: auto;
+  }
+
+  .project-image-container img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
   }
 
   .project-content,
@@ -856,8 +901,19 @@
     width: 270px;
   }
 
+  /*
+    No fixed image height.
+    Full website screenshot stays visible.
+  */
   .project-image-container {
-    height: 170px;
+    height: auto;
+  }
+
+  .project-image-container img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
   }
 
   .project-title,
